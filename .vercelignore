@@ -1,0 +1,20 @@
+# Never upload local credentials or Vercel project metadata.
+.env
+.env.*
+.vercel
+*.pem
+*.key
+*.p12
+*.json.credentials
+
+# Local build, dependency, test, and temporary artifacts.
+.git
+.next
+node_modules
+coverage
+playwright-report
+test-results
+tmp
+*.log
+*.tsbuildinfo
+.eslintcache

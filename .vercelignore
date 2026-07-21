@@ -2,6 +2,8 @@
 .env
 .env.*
 .vercel
+supabase/.branches
+supabase/.temp
 *.pem
 *.key
 *.p12

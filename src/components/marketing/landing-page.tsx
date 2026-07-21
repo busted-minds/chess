@@ -26,8 +26,11 @@ export function LandingPage() {
           <div>
             <Pill className="border-cyan-300/20 bg-cyan-400/8 text-cyan-200"><span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />Ready when you are · no account needed</Pill>
             <div className="mt-7 sm:hidden"><BrandLogo className="h-24 w-48" /></div>
-            <h1 className="mt-7 max-w-3xl text-[clamp(3.2rem,8vw,6.9rem)] font-bold leading-[.92] tracking-[-0.075em]"><span className="text-gradient">Outthink</span><br />the board.</h1>
-            <p className="mt-7 max-w-xl text-base leading-7 text-[var(--text-muted)] sm:text-lg sm:leading-8">Play sharp, beautiful chess against people, personality-driven computer opponents, or the friend sitting across from you. Then understand every move.</p>
+            <h1 className="mt-7 max-w-3xl text-[clamp(3.2rem,8vw,6.9rem)] font-bold leading-[.92] tracking-[-0.075em]">
+              <span className="mb-5 block text-base font-bold uppercase tracking-[.18em] text-[var(--text-muted)]">Busted Minds Chess</span>
+              <span className="text-gradient">Outthink</span><br />the board.
+            </h1>
+            <p className="mt-7 max-w-xl text-base leading-7 text-[var(--text-muted)] sm:text-lg sm:leading-8">Busted Minds Chess is a browser-based chess platform for playing online, against computer opponents, or locally with a friend, and for training with puzzles and Stockfish analysis. Google sign-in is optional and only requests your basic profile and email to create or access your account and save progress.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/play/online" size="lg" className="group"><Bolt size={18} fill="currentColor" />Play online<ArrowRight size={17} className="transition group-hover:translate-x-1" /></ButtonLink>
               <ButtonLink href="/play/ai" size="lg" variant="secondary"><Sparkles size={18} className="text-orange-300" />Challenge the AI</ButtonLink>

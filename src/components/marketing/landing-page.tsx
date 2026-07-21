@@ -111,8 +111,8 @@ export function LandingPage() {
       <section className="relative overflow-hidden px-5 py-28 text-center">
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_center,rgba(25,198,237,.14),transparent_52%)]" />
         <Image src="/mascot/nova.png" alt="Nova, the Busted Minds Chess mascot" width={260} height={390} className="pointer-events-none absolute -bottom-16 left-[max(1rem,calc(50%-600px))] hidden h-80 w-auto object-contain opacity-90 lg:block" />
-        <Image src="/brand/chess-logo-dark.png" alt="Busted Minds Chess" width={280} height={186} className="dark-logo mx-auto h-32 w-52 object-contain" />
-        <Image src="/brand/chess-logo-light.png" alt="Busted Minds Chess" width={280} height={186} className="light-logo mx-auto h-32 w-52 object-contain" />
+        <Image src="/brand/chess-logo.png" alt="Busted Minds Chess" width={280} height={186} className="dark-logo mx-auto h-32 w-52 object-contain" />
+        <Image src="/brand/chess-logo.png" alt="Busted Minds Chess" width={280} height={186} className="light-logo mx-auto h-32 w-52 object-contain" />
         <h2 className="mx-auto mt-2 max-w-3xl text-4xl font-bold tracking-[-.055em] sm:text-6xl">The board is ready.<br /><span className="text-gradient">What&apos;s your idea?</span></h2>
         <p className="mx-auto mt-5 max-w-xl text-sm leading-7 text-[var(--text-muted)]">Take a seat in seconds. Keep your history when you&apos;re ready to make it yours.</p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row"><ButtonLink href="/play/online" size="lg"><Bolt size={18} />Find a game</ButtonLink><ButtonLink href="/auth" variant="secondary" size="lg">Create free account</ButtonLink></div>

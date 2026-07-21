@@ -10,7 +10,7 @@ const appUrl = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(appUrl),
-  title: { default: "Busted Minds Chess — Outthink the board", template: "%s · Busted Minds Chess" },
+  title: { default: "Busted Minds Chess", template: "%s · Busted Minds Chess" },
   description: "Play beautiful online, local, and computer chess. Train with puzzles, analyze with Stockfish, join events, and make every move count.",
   applicationName: "Busted Minds Chess",
   keywords: ["chess", "online chess", "chess puzzles", "Stockfish", "chess training", "play chess"],
@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "Busted Minds Chess",
-    title: "Busted Minds Chess — Outthink the board",
+    title: "Busted Minds Chess",
     description: "Play, learn, compete, and keep getting better.",
-    images: [{ url: "/brand/chess-logo-dark.png", width: 1536, height: 1024, alt: "Busted Minds Chess" }],
+    images: [{ url: "/brand/chess-logo.png", width: 1536, height: 1024, alt: "Busted Minds Chess" }],
   },
-  twitter: { card: "summary_large_image", title: "Busted Minds Chess", description: "Outthink the board.", images: ["/brand/chess-logo-dark.png"] },
+  twitter: { card: "summary_large_image", title: "Busted Minds Chess", description: "Outthink the board.", images: ["/brand/chess-logo.png"] },
 };
 
 export const viewport: Viewport = { themeColor: "#06111f", colorScheme: "dark light", width: "device-width", initialScale: 1, viewportFit: "cover" };

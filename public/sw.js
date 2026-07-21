@@ -5,8 +5,8 @@ const SHELL = [
   "/play/local",
   "/play/ai",
   "/offline",
-  "/brand/chess-logo-dark.png",
-  "/brand/chess-logo-light.png",
+  "/brand/chess-logo.png",
+  "/brand/chess-logo.png",
   "/brand/chess-icon.png",
   "/stockfish/stockfish-18-lite-single.js",
   "/stockfish/stockfish-18-lite-single.wasm"

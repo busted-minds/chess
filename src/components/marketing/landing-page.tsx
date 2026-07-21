@@ -26,11 +26,9 @@ export function LandingPage() {
           <div>
             <Pill className="border-cyan-300/20 bg-cyan-400/8 text-cyan-200"><span className="size-1.5 animate-pulse rounded-full bg-emerald-400" />Ready when you are · no account needed</Pill>
             <div className="mt-7 sm:hidden"><BrandLogo className="h-24 w-48" /></div>
-            <h1 className="mt-7 max-w-3xl text-[clamp(3.2rem,8vw,6.9rem)] font-bold leading-[.92] tracking-[-0.075em]">
-              <span className="mb-5 block text-base font-bold uppercase tracking-[.18em] text-[var(--text-muted)]">Busted Minds Chess</span>
-              <span className="text-gradient">Outthink</span><br />the board.
-            </h1>
-            <p className="mt-7 max-w-xl text-base leading-7 text-[var(--text-muted)] sm:text-lg sm:leading-8">Busted Minds Chess is a browser-based chess platform for playing online, against computer opponents, or locally with a friend, and for training with puzzles and Stockfish analysis. Google sign-in is optional and only requests your basic profile and email to create or access your account and save progress.</p>
+            <h1 className="mt-7 max-w-3xl text-[clamp(3rem,7vw,6rem)] font-bold leading-[.92] tracking-[-0.075em]">Busted Minds Chess</h1>
+            <p className="mt-5 text-2xl font-bold tracking-[-0.04em] text-gradient sm:text-4xl">Outthink the board.</p>
+            <p className="mt-7 max-w-xl text-base leading-7 text-[var(--text-muted)] sm:text-lg sm:leading-8">Busted Minds Chess is a public, browser-based chess application. Its purpose is to let people play chess online against other players, challenge computer opponents, share a local board with a friend, solve puzzles, study openings, analyze positions with in-browser Stockfish, and join chess events.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <ButtonLink href="/play/online" size="lg" className="group"><Bolt size={18} fill="currentColor" />Play online<ArrowRight size={17} className="transition group-hover:translate-x-1" /></ButtonLink>
               <ButtonLink href="/play/ai" size="lg" variant="secondary"><Sparkles size={18} className="text-orange-300" />Challenge the AI</ButtonLink>
@@ -45,6 +43,21 @@ export function LandingPage() {
         </div>
         <div className="relative overflow-hidden border-t border-[var(--border)] bg-[var(--surface-deep)] py-3">
           <div className="animate-ticker flex w-max items-center gap-10 whitespace-nowrap pr-10 text-xs font-semibold text-[var(--text-muted)]">{[...ticker, ...ticker].map((item, index) => <span key={`${item}-${index}`} className="flex items-center gap-2"><span className="size-1.5 rounded-full bg-[var(--accent)]" />{item}</span>)}</div>
+        </div>
+      </section>
+
+      <section aria-labelledby="about-busted-minds-chess" className="border-b border-[var(--border)] bg-[var(--surface-deep)]">
+        <div className="mx-auto grid max-w-[1320px] gap-8 px-5 py-14 md:px-8 lg:grid-cols-[1fr_1fr]">
+          <div>
+            <Eyebrow>About the application</Eyebrow>
+            <h2 id="about-busted-minds-chess" className="mt-3 text-3xl font-bold tracking-[-0.04em]">What is Busted Minds Chess?</h2>
+            <p className="mt-4 max-w-xl text-sm leading-7 text-[var(--text-muted)]">Busted Minds Chess provides online multiplayer chess, computer and local play, puzzles, opening study, browser-based game analysis, ratings, game history, social features, and tournaments. Local play and computer games can be used without an account. Creating an account is optional and lets a player keep their identity, games, ratings, friends, events, and learning progress.</p>
+          </div>
+          <div className="rounded-[1.5rem] border border-[var(--border)] bg-[var(--surface)] p-6 shadow-[var(--shadow-card)]">
+            <h2 className="text-xl font-bold">How Google sign-in is used</h2>
+            <p className="mt-3 text-sm leading-7 text-[var(--text-muted)]">If you choose Google sign-in, Busted Minds Chess requests only your name, email address, profile image, and Google account identifier. We use this information to create or authenticate your Busted Minds Chess account and associate your saved progress with it. We do not request access to Gmail, Google Drive, Calendar, Contacts, or other Google services.</p>
+            <p className="mt-4 text-sm text-[var(--text-muted)]">See our <Link href="/privacy" className="font-bold text-[var(--accent)] hover:underline">Privacy Policy</Link> and <Link href="/terms" className="font-bold text-[var(--accent)] hover:underline">Terms of Service</Link>.</p>
+          </div>
         </div>
       </section>
 

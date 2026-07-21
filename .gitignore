@@ -1,0 +1,42 @@
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Vercel
+.vercel/
+
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.json.credentials
+
+# Supabase local state
+supabase/.branches/
+supabase/.temp/
+
+# Tests and tooling
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+.eslintcache
+
+# Editors and OS files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# Generated intermediates
+tmp/

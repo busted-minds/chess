@@ -1,0 +1,53 @@
+{
+  "name": "bustedminds-chess",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Busted Minds Chess — play, learn, and compete.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint . --max-warnings=0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "verify": "npm run lint && npm run typecheck && npm run test && npm run build"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.3",
+    "@supabase/supabase-js": "2.110.7",
+    "chess.js": "1.4.0",
+    "clsx": "2.1.1",
+    "date-fns": "4.1.0",
+    "lucide-react": "1.25.0",
+    "motion": "12.42.2",
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-chessboard": "5.10.0",
+    "react-dom": "19.2.7",
+    "stockfish": "18.0.8",
+    "tailwind-merge": "3.6.0",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "24.10.0",
+    "@types/react": "19.2.7",
+    "@types/react-dom": "19.2.3",
+    "@vitest/coverage-v8": "4.1.10",
+    "eslint": "9.39.2",
+    "eslint-config-next": "16.2.10",
+    "jsdom": "27.3.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  },
+  "overrides": {
+    "postcss": "8.5.10"
+  }
+}

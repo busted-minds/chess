@@ -1,0 +1,14 @@
+import { Eye, MessageCircle, Radio, Star } from "lucide-react";
+import { AppShell } from "@/components/layout/app-shell";
+import { Pill, Surface } from "@/components/ui/surface";
+import { featuredGames } from "@/lib/data/content";
+
+export default function WatchPage() {
+  return <AppShell title="Watch" description="Live boards, sharp finishes, and instructive games worth keeping close.">
+    <div className="grid gap-5 xl:grid-cols-[1.25fr_.75fr]">
+      <Surface className="overflow-hidden"><div className="grid gap-0 md:grid-cols-[1fr_250px]"><div className="aspect-square bg-[linear-gradient(45deg,#d1e0e3_25%,#3d7688_25%,#3d7688_50%,#d1e0e3_50%,#d1e0e3_75%,#3d7688_75%)] [background-size:25%_25%]" /><div className="flex flex-col p-5"><div className="flex items-center justify-between"><Pill className="border-red-400/20 text-red-300"><Radio size={11} />Live</Pill><span className="text-xs text-[var(--text-faint)]">3+2</span></div><div className="mt-5 space-y-3"><Player name="MiraTempo" rating="2284" clock="01:46" /><Player name="Sage Bishop" rating="2190" clock="02:18" /></div><div className="mt-6 rounded-xl bg-cyan-400/8 p-3"><p className="text-[10px] font-bold uppercase tracking-wider text-[var(--accent)]">Engine pulse</p><p className="mt-1 text-sm font-bold">+2.4 · 26. Rxd7!</p></div><div className="mt-auto flex items-center justify-between pt-6 text-xs text-[var(--text-faint)]"><span className="flex items-center gap-1"><Eye size={13} />18</span><span className="flex items-center gap-1"><MessageCircle size={13} />7</span><button aria-label="Favorite game"><Star size={15} /></button></div></div></div></Surface>
+      <Surface className="p-5"><h2 className="font-bold">Live now</h2><div className="mt-3 divide-y divide-[var(--border)]">{featuredGames.map((game, i) => <div key={game.white} className="py-4"><div className="flex justify-between gap-3"><div><p className="text-sm font-bold">{game.white}</p><p className="mt-1 text-sm font-bold">{game.black}</p></div><div className="text-right"><p className="font-mono text-xs font-bold">{i === 0 ? "1:46" : "6:24"}</p><p className="mt-1 font-mono text-xs font-bold">{i === 0 ? "2:18" : "5:51"}</p></div></div><div className="mt-3 flex justify-between text-[10px] text-[var(--text-faint)]"><span>{game.opening}</span><span>{game.viewers} watching</span></div></div>)}</div></Surface>
+    </div>
+  </AppShell>;
+}
+function Player({ name, rating, clock }: { name: string; rating: string; clock: string }) { return <div className="flex items-center gap-3 rounded-xl bg-[var(--surface-soft)] p-3"><span className="grid size-9 place-items-center rounded-xl bg-cyan-400/10 text-xl">♞</span><div className="min-w-0 flex-1"><p className="truncate text-sm font-bold">{name}</p><p className="text-[10px] text-[var(--text-faint)]">{rating}</p></div><span className="font-mono text-sm font-bold">{clock}</span></div>; }

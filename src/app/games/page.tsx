@@ -1,0 +1,18 @@
+import { CalendarDays, ChevronLeft, ChevronRight, Filter, Heart, Search } from "lucide-react";
+import { AppShell } from "@/components/layout/app-shell";
+import { Pill, Surface } from "@/components/ui/surface";
+
+const games = [
+  { opponent: "Nova Knight", result: "Win", color: "White", rating: "+18", opening: "Queen's Gambit Declined", clock: "10+0", date: "Today", moves: 38, house: true },
+  { opponent: "ForkInRoad", result: "Draw", color: "Black", rating: "+2", opening: "Sicilian Defense", clock: "3+2", date: "Yesterday", moves: 54 },
+  { opponent: "Pixel Pawn", result: "Win", color: "Black", rating: "Casual", opening: "Italian Game", clock: "5+3", date: "Jul 19", moves: 27, house: true },
+  { opponent: "QuietStorm", result: "Loss", color: "White", rating: "-11", opening: "Caro-Kann Defense", clock: "15+10", date: "Jul 18", moves: 46 },
+];
+
+export default function GamesPage() {
+  return <AppShell title="Game archive" description="Search every saved game by opponent, result, opening, clock, date, event, or opponent type.">
+    <Surface className="p-4"><div className="grid gap-3 lg:grid-cols-[1fr_auto_auto]"><label className="flex items-center gap-2 rounded-xl bg-[var(--surface-soft)] px-3 py-2.5"><Search size={16} className="text-[var(--text-faint)]" /><input aria-label="Search game archive" placeholder="Opponent, opening, event…" className="w-full bg-transparent text-sm outline-none placeholder:text-[var(--text-faint)]" /></label><button className="flex h-11 items-center justify-center gap-2 rounded-xl border border-[var(--border)] px-4 text-sm font-bold text-[var(--text-muted)]"><Filter size={16} />Filters</button><button className="flex h-11 items-center justify-center gap-2 rounded-xl border border-[var(--border)] px-4 text-sm font-bold text-[var(--text-muted)]"><CalendarDays size={16} />Any date</button></div></Surface>
+    <Surface className="mt-5 overflow-hidden"><div className="hidden grid-cols-[1.3fr_.7fr_.7fr_.8fr_.55fr_.55fr_36px] gap-4 border-b border-[var(--border)] px-5 py-3 text-[10px] font-bold uppercase tracking-wider text-[var(--text-faint)] md:grid"><span>Opponent</span><span>Result</span><span>Clock</span><span>Opening</span><span>Moves</span><span>Date</span><span /></div>{games.map((game) => <div key={`${game.opponent}-${game.date}`} className="grid gap-3 border-b border-[var(--border)] p-5 last:border-0 md:grid-cols-[1.3fr_.7fr_.7fr_.8fr_.55fr_.55fr_36px] md:items-center md:gap-4"><div className="flex items-center gap-3"><span className="grid size-10 place-items-center rounded-xl bg-cyan-400/10 text-xl text-cyan-300">♞</span><div><p className="text-sm font-bold">{game.opponent}</p><p className="mt-1 text-[10px] text-[var(--text-faint)]">You played {game.color} {game.house && "· House Player"}</p></div></div><div><Pill className={game.result === "Win" ? "text-emerald-300" : game.result === "Loss" ? "text-red-300" : "text-[var(--text-muted)]"}>{game.result} · {game.rating}</Pill></div><span className="text-sm font-semibold">{game.clock}</span><span className="truncate text-xs text-[var(--text-muted)]">{game.opening}</span><span className="text-xs text-[var(--text-muted)]">{game.moves}</span><span className="text-xs text-[var(--text-muted)]">{game.date}</span><button aria-label={`Favorite game against ${game.opponent}`} className="icon-button"><Heart size={16} /></button></div>)}</Surface>
+    <div className="mt-5 flex items-center justify-between text-xs text-[var(--text-faint)]"><span>Showing 1–4 of 4 games</span><div className="flex gap-2"><button className="icon-button" disabled><ChevronLeft size={17} /></button><button className="icon-button" disabled><ChevronRight size={17} /></button></div></div>
+  </AppShell>;
+}

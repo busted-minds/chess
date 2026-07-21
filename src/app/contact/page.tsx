@@ -1,0 +1,16 @@
+import type { Metadata } from "next";
+import { Bug, Clock3, HeartHandshake, LockKeyhole, MessageSquareText, ShieldAlert } from "lucide-react";
+import { PublicPage, BetaNotice } from "../features/_components/public-page";
+import { Surface } from "@/components/ui/surface";
+import { ContactForm } from "./contact-form";
+
+export const metadata: Metadata = { title: "Contact and feedback", description: "Send product feedback, a bug report, account question, privacy request, or safety concern to Busted Minds Chess." };
+
+export default function ContactPage() { return <PublicPage eyebrow="We are listening" title="Help us make the next move better." intro="Tell us what worked, what got in your way, or what would make Busted Minds Chess more useful. A clear, focused note is the fastest route to a useful answer." aside={<BetaNotice>We are a small public-beta service, so replies are not instant. Safety and account-access reports take priority; feature requests are reviewed together rather than answered one by one.</BetaNotice>}>
+  <div className="grid gap-7 lg:grid-cols-[minmax(0,1fr)_340px]">
+    <Surface className="p-6 sm:p-8"><div className="mb-7"><div className="flex items-center gap-3"><span className="grid size-11 place-items-center rounded-2xl bg-[var(--accent-soft)] text-[var(--accent)]"><MessageSquareText size={21} /></span><div><h2 className="text-xl font-bold">Send a message</h2><p className="mt-1 text-xs text-[var(--text-muted)]">Required fields are checked before submission.</p></div></div></div><ContactForm /></Surface>
+    <aside className="space-y-5"><Surface className="p-5"><h2 className="font-bold">A useful report includes</h2><div className="mt-4 space-y-4"><Tip icon={Bug} title="What happened" body="Steps, page or game link, device, browser, and the exact error." /><Tip icon={Clock3} title="When it happened" body="Your timezone and an approximate time help correlate service logs." /><Tip icon={HeartHandshake} title="What you expected" body="The intended outcome makes product feedback much easier to act on." /></div></Surface><Surface className="border-orange-400/15 bg-orange-400/[.05] p-5"><ShieldAlert size={21} className="text-orange-300" /><h2 className="mt-4 font-bold">Immediate danger</h2><p className="mt-2 text-xs leading-5 text-[var(--text-muted)]">This form is not an emergency service. If someone is in immediate danger, contact the appropriate local emergency service. For chess-platform safety issues, choose Safety or moderation.</p></Surface><Surface className="p-5"><LockKeyhole size={21} className="text-emerald-300" /><h2 className="mt-4 font-bold">Keep secrets secret</h2><p className="mt-2 text-xs leading-5 text-[var(--text-muted)]">We will never ask for your password, one-time code, OAuth secret, API key, or full payment details through this form.</p></Surface></aside>
+  </div>
+  </PublicPage>; }
+
+function Tip({ icon: Icon, title, body }: { icon: typeof Bug; title: string; body: string }) { return <div className="flex gap-3"><Icon size={17} className="mt-0.5 shrink-0 text-[var(--accent)]" /><div><p className="text-sm font-bold">{title}</p><p className="mt-1 text-xs leading-5 text-[var(--text-muted)]">{body}</p></div></div>; }
